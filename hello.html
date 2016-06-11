@@ -26,15 +26,40 @@
 <div id="md" style="display: none;">
 <!-- markdown -->
 ##hello
-在c语言中，hello world一般都这么写：
+在c中，hello world应该这么写：
 
 ~~~~{cpp}
 #include <stdio.h>
 int main(void)
 {
-        printf("Hello world!\n");
-        return 0;
+    printf("Hello world!\n");
+    return 0;
 }
+~~~~
+
+但是在c++中，hello world可以这么写：
+
+~~~~{cpp}
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Hello world!" << endl;
+    return 0;
+}
+~~~~
+
+而用脚本语言就非常方便了：
+shell：
+
+~~~~{bash}
+echo "Hello world!"
+~~~~
+
+perl/lua
+
+~~~~{perl}
+print "Hello world!"
 ~~~~
 
 <!-- markdown end -->
@@ -43,14 +68,36 @@ int main(void)
 <!-- content -->
 <h2 id="hello">hello</h2>
 
-<p>在c语言中，hello world一般都这么写：</p>
+<p>在c中，hello world应该这么写：</p>
 
 <pre class=" language-cpp"><code class=" language-cpp"><span class="token property">#include <span class="token property">&lt;stdio.h&gt;</span></span>
 <span class="token keyword">int</span> <span class="token function">main<span class="token punctuation">(</span></span><span class="token keyword">void</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-        <span class="token function">printf<span class="token punctuation">(</span></span><span class="token string">"Hello world!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">printf<span class="token punctuation">(</span></span><span class="token string">"Hello world!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
+</code></pre>
+
+<p>但是在c++中，hello world可以这么写：</p>
+
+<pre class=" language-cpp"><code class=" language-cpp"><span class="token property">#include <span class="token property">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"Hello world!"</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>而用脚本语言就非常方便了：
+shell：</p>
+
+<pre class=" language-bash"><code class=" language-bash"><span class="token keyword">echo</span> <span class="token string">"Hello world!"</span>
+</code></pre>
+
+<p>perl/lua</p>
+
+<pre><code class="language-perl">print "Hello world!"
 </code></pre>
 <!-- content end -->
 </div>
