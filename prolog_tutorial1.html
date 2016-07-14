@@ -25,12 +25,71 @@
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
+#环境搭建
+##Linux
+###GNU Prolog
+####简介
+GNU Prolog 是一个由丹尼尔 · 迪亚兹开发的免费的 Prolog 编译器与解释器。
 
+GNU Prolog 接受 Prolog  程序，并且生成本机二进制文件 （就像 gcc  编译 c 源码）。得到的可执行文件是独立的。该可执行文件的大小可以很小，因为 GNU Prolog 可以避免将未使用内置谓词链接。是非常令人鼓舞的 GNU Prolog 的性能 （类似于商业系统）。
+
+除了本机代码编译，GNU Prolog 还提供了一个经典的交互式解释器和调试器（顶层）。
+
+>GNU Prolog is a free Prolog compiler with constraint solving over finite domains developed by Daniel Diaz.
+
+>GNU Prolog accepts Prolog+constraint programs and produces native binaries (like gcc does from a C source). The obtained executable is then stand-alone. The size of this executable can be quite small since GNU Prolog can avoid to link the code of most unused built-in predicates. The performances of GNU Prolog are very encouraging (comparable to commercial systems). 
+
+>Beside the native-code compilation, GNU Prolog offers a classical interactive interpreter (top-level) with a debugger.
+
+[http://www.gprolog.org/](http://www.gprolog.org/)
+
+####安装
+
+GNU Prolog 在软件仓库里有，所以可以
+
+    sudo apt-get install gprolog
+
+但是在软件仓库里的版本很旧（目前软件仓库里是1.3.0，而最新是1.4.4）所以需要编译安装。
+
+#####编译安装（注：这是一个五级目录）
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
+<h1 id="">环境搭建</h1>
 
+<h2 id="linux">Linux</h2>
+
+<h3 id="gnuprolog">GNU Prolog</h3>
+
+<h4 id="">简介</h4>
+
+<p>GNU Prolog 是一个由丹尼尔 · 迪亚兹开发的免费的 Prolog 编译器与解释器。</p>
+
+<p>GNU Prolog 接受 Prolog  程序，并且生成本机二进制文件 （就像 gcc  编译 c 源码）。得到的可执行文件是独立的。该可执行文件的大小可以很小，因为 GNU Prolog 可以避免将未使用内置谓词链接。是非常令人鼓舞的 GNU Prolog 的性能 （类似于商业系统）。</p>
+
+<p>除了本机代码编译，GNU Prolog 还提供了一个经典的交互式解释器和调试器（顶层）。</p>
+
+<blockquote>
+  <p>GNU Prolog is a free Prolog compiler with constraint solving over finite domains developed by Daniel Diaz.</p>
+  
+  <p>GNU Prolog accepts Prolog+constraint programs and produces native binaries (like gcc does from a C source). The obtained executable is then stand-alone. The size of this executable can be quite small since GNU Prolog can avoid to link the code of most unused built-in predicates. The performances of GNU Prolog are very encouraging (comparable to commercial systems). </p>
+  
+  <p>Beside the native-code compilation, GNU Prolog offers a classical interactive interpreter (top-level) with a debugger.</p>
+</blockquote>
+
+<p><a href="http://www.gprolog.org/">http://www.gprolog.org/</a></p>
+
+<h4 id="">安装</h4>
+
+<p>GNU Prolog 在软件仓库里有，所以可以</p>
+
+<pre><code>sudo apt-get install gprolog
+</code></pre>
+
+<p>但是在软件仓库里的版本很旧（目前软件仓库里是1.3.0，而最新是1.4.4）所以需要编译安装。</p>
+
+<h5 id="">编译安装（注：这是一个五级目录）</h5>
 <!-- content end -->
 </div>
 <br>
