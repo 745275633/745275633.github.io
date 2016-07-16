@@ -82,19 +82,19 @@ Prolog 是 Programming in Logic 的缩写，意思就是使用逻辑的语言编
 ~~~~
 love(zhangxueyou, wangfei).
 love(zhangxueyou, zouhuimin).
-love(wanfei, xietinfeng).
+love(wangfei, xietingfeng).
 love(zouhuimin, zhangxueyou).
-love(xietinfeng, wanfei).
-love(xietinfeng, zouhuimin).
+love(xietingfeng, wangfei).
+love(xietingfeng, zouhuimin).
 love(liudehua, zouhuimin).
 lovers(X,Y):-love(X,Y),love(Y,X).
 ~~~~
 
 在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入`[user].`然后敲两下回车，输入这段文字之后，敲一下回车，然后，windows 输入 &lt;Ctrl-Z> ，其他系统输入 &lt;Ctrl-D> 反正就是输入EOF。
 
-现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它。如：
+现在，解释器已经知道谁爱谁和情侣是什么了，解释器的提示符是`?-`，你可以认为和shell的`$`差不多，现在可以问它。如：
 
-    love(zhangxueyou, wangfei).
+    ？- love(zhangxueyou, wangfei).
 
 表示张学友爱王菲吗，swi 会告诉你
 
@@ -108,7 +108,81 @@ lovers(X,Y):-love(X,Y),love(Y,X).
 
     yes
 
+表示找到了。
 
+在 Prolog 中，大写字母开头的叫做变量，解释器会求出变量的值。例如：
+
+    ?- love(zhangxueyou,X).
+
+这句话是说，张学友喜欢哪些人，在GNU中，会显示
+
+    X = wangfei ?
+
+你直接输入回车就结束了，输入`;`可以求出下一个（组）解：
+
+~~~~
+X = wangfei ? ;
+
+X = zouhuimin
+
+yes
+~~~~
+
+也可以输入`a`输出全部解。
+
+在swi中
+
+~~~~
+?- love(zhangxueyou,X).
+X = wangfei ;
+X = zouhuimin.
+~~~~
+
+不能输出全部解，只能一个一个输出。
+
+现在我们来试一下***规则***
+
+    lovers(wangfei,Y).
+    Y = xietingfeng
+
+解释器告诉我们，王菲的情侣是谢霆锋
+
+我们再来问一下有哪些情侣
+
+~~~~
+?- lovers(X, Y).
+X = zhangxueyou,
+Y = zouhuimin ;
+X = wanfei,
+Y = xietinfeng ;
+X = zouhuimin,
+Y = zhangxueyou ;
+X = xietinfeng,
+Y = wanfei ;
+false.
+~~~~
+
+最后那个false，表示找不到更多了
+
+GNU则是
+
+~~~~
+X = zhangxueyou
+Y = zouhuimin ? a
+
+X = wangfei
+Y = xietingfeng
+
+X = zouhuimin
+Y = zhangxueyou
+
+X = xietingfeng
+Y = wangfei
+
+no
+~~~~
+
+GNU 用的是 yes 和 no ，而 swi 用的是 true 和 false。
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -173,19 +247,19 @@ lovers(X,Y):-love(X,Y),love(Y,X).
 
 <pre><code>love(zhangxueyou, wangfei).
 love(zhangxueyou, zouhuimin).
-love(wanfei, xietinfeng).
+love(wangfei, xietingfeng).
 love(zouhuimin, zhangxueyou).
-love(xietinfeng, wanfei).
-love(xietinfeng, zouhuimin).
+love(xietingfeng, wangfei).
+love(xietingfeng, zouhuimin).
 love(liudehua, zouhuimin).
 lovers(X,Y):-love(X,Y),love(Y,X).
 </code></pre>
 
 <p>在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入<code>[user].</code>然后敲两下回车，输入这段文字之后，敲一下回车，然后，windows 输入 &lt;Ctrl-Z&gt; ，其他系统输入 &lt;Ctrl-D&gt; 反正就是输入EOF。</p>
 
-<p>现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它。如：</p>
+<p>现在，解释器已经知道谁爱谁和情侣是什么了，解释器的提示符是<code>?-</code>，你可以认为和shell的<code>$</code>差不多，现在可以问它。如：</p>
 
-<pre><code>love(zhangxueyou, wangfei).
+<pre><code>？- love(zhangxueyou, wangfei).
 </code></pre>
 
 <p>表示张学友爱王菲吗，swi 会告诉你</p>
@@ -202,6 +276,81 @@ lovers(X,Y):-love(X,Y),love(Y,X).
 
 <pre><code>yes
 </code></pre>
+
+<p>表示找到了。</p>
+
+<p>在 Prolog 中，大写字母开头的叫做变量，解释器会求出变量的值。例如：</p>
+
+<pre><code>?- love(zhangxueyou,X).
+</code></pre>
+
+<p>这句话是说，张学友喜欢哪些人，在GNU中，会显示</p>
+
+<pre><code>X = wangfei ?
+</code></pre>
+
+<p>你直接输入回车就结束了，输入<code>;</code>可以求出下一个（组）解：</p>
+
+<pre><code>X = wangfei ? ;
+
+X = zouhuimin
+
+yes
+</code></pre>
+
+<p>也可以输入<code>a</code>输出全部解。</p>
+
+<p>在swi中</p>
+
+<pre><code>?- love(zhangxueyou,X).
+X = wangfei ;
+X = zouhuimin.
+</code></pre>
+
+<p>不能输出全部解，只能一个一个输出。</p>
+
+<p>现在我们来试一下<strong><em>规则</em></strong></p>
+
+<pre><code>lovers(wangfei,Y).
+Y = xietingfeng
+</code></pre>
+
+<p>解释器告诉我们，王菲的情侣是谢霆锋</p>
+
+<p>我们再来问一下有哪些情侣</p>
+
+<pre><code>?- lovers(X, Y).
+X = zhangxueyou,
+Y = zouhuimin ;
+X = wanfei,
+Y = xietinfeng ;
+X = zouhuimin,
+Y = zhangxueyou ;
+X = xietinfeng,
+Y = wanfei ;
+false.
+</code></pre>
+
+<p>最后那个false，表示找不到更多了</p>
+
+<p>GNU则是</p>
+
+<pre><code>X = zhangxueyou
+Y = zouhuimin ? a
+
+X = wangfei
+Y = xietingfeng
+
+X = zouhuimin
+Y = zhangxueyou
+
+X = xietingfeng
+Y = wangfei
+
+no
+</code></pre>
+
+<p>GNU 用的是 yes 和 no ，而 swi 用的是 true 和 false。</p>
 <!-- content end -->
 </div>
 <br>
