@@ -90,9 +90,25 @@ love(liudehua, zouhuimin).
 lovers(X,Y):-love(X,Y),love(Y,X).
 ~~~~
 
-在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入`[user].`然后敲两下回车，输入这段文字之后，windows 输入 &lt;Ctrl-Z> ，其他系统输入 &lt;Ctrl-D> 反正就是输入EOF。
+在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入`[user].`然后敲两下回车，输入这段文字之后，敲一下回车，然后，windows 输入 &lt;Ctrl-Z> ，其他系统输入 &lt;Ctrl-D> 反正就是输入EOF。
 
-现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它
+现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它。如：
+
+    love(zhangxueyou, wangfei).
+
+表示张学友爱王菲吗，swi 会告诉你
+
+    true
+
+你再敲一下回车会出现一个`.` ，而GNU会出现
+
+    true ?
+
+那个问号不是不确定，而是问你还要继续吗，在这里直接敲回车就会有
+
+    yes
+
+
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -165,9 +181,27 @@ love(liudehua, zouhuimin).
 lovers(X,Y):-love(X,Y),love(Y,X).
 </code></pre>
 
-<p>在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入<code>[user].</code>然后敲两下回车，输入这段文字之后，windows 输入 &lt;Ctrl-Z&gt; ，其他系统输入 &lt;Ctrl-D&gt; 反正就是输入EOF。</p>
+<p>在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入<code>[user].</code>然后敲两下回车，输入这段文字之后，敲一下回车，然后，windows 输入 &lt;Ctrl-Z&gt; ，其他系统输入 &lt;Ctrl-D&gt; 反正就是输入EOF。</p>
 
-<p>现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它</p>
+<p>现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它。如：</p>
+
+<pre><code>love(zhangxueyou, wangfei).
+</code></pre>
+
+<p>表示张学友爱王菲吗，swi 会告诉你</p>
+
+<pre><code>true
+</code></pre>
+
+<p>你再敲一下回车会出现一个<code>.</code> ，而GNU会出现</p>
+
+<pre><code>true ?
+</code></pre>
+
+<p>那个问号不是不确定，而是问你还要继续吗，在这里直接敲回车就会有</p>
+
+<pre><code>yes
+</code></pre>
 <!-- content end -->
 </div>
 <br>
