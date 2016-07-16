@@ -55,7 +55,7 @@ Prolog 是 Programming in Logic 的缩写，意思就是使用逻辑的语言编
 1. 所有符号都要使用半角的（英文符号）也就是`(),. `，而不是`（），。`
 2. 最后的`.`一定不能没，这个`.`就相当于 c/c++ 中的`;`，表示一条语句结束了
 3. 这些词汇对电脑来说没有意义，如果你愿意，你也可以写成`xxx(zxy, wf).`，只要你自己明白
-4. 有些教程会说 Prolog 不支持中文，事实上是可以的，这条语句在 swi-prolog 中通过，在 GNU Prolog（在swi-prolog中也可以） 中需要在中文外面加单引号`’爱‘(’张学友‘, ’王菲‘).`，也必须是半角的。
+4. 有些教程会说 Prolog 不支持中文，事实上是可以的，这条语句在 swi-prolog 中通过，在 GNU Prolog（在swi-prolog中也可以） 中需要在中文外面加单引号`’爱‘(’张学友‘, ’王菲‘).`，也必须是半角的。**但是**，gprolog 不支持输入中文，必须要使用重定向从文件中才能输入，比较麻烦。
 
 例子中的事实翻译成 Prolog 就是
 
@@ -69,6 +69,28 @@ Prolog 是 Programming in Logic 的缩写，意思就是使用逻辑的语言编
 '爱'('刘德华', '周慧敏').
 ~~~~
 
+那他们中，有哪些人是情侣呢？
+
+电脑不知道什么是情侣，所以要告诉它情侣的***规则***
+
+    情侣 (甲, 乙) :- 爱 (甲, 乙), 爱 (乙, 甲).
+
+`:-`表示如果，这句话翻译成人类的语言就是`如果甲爱乙，而且乙爱甲。那么甲和乙就是情侣`
+
+全部用英语表示（ gprolog 的中文支持的不太好）就是：
+
+~~~~
+love(zhangxueyou, wanfei).
+love (zhangxueyou,zouhuimin).
+love (wanfei,xietinfeng).
+love (zouhuimin,zhangxueyou).
+love (xietinfeng,wanfei).
+love (xietinfeng,zouhuimin).
+love (liudehua,zouhuimin).
+lovers(X,Y):-love(X,Y),love(Y,X).
+~~~~
+
+在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入`[user].`然后敲两下回车，输入这段文字之后，windows 输入 &lt;Ctrl-Z> ，其他系统输入 &lt;Ctrl-D> 反正就是输入EOF。
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -106,7 +128,7 @@ Prolog 是 Programming in Logic 的缩写，意思就是使用逻辑的语言编
 <li>所有符号都要使用半角的（英文符号）也就是<code>(),.</code>，而不是<code>（），。</code></li>
 <li>最后的<code>.</code>一定不能没，这个<code>.</code>就相当于 c/c++ 中的<code>;</code>，表示一条语句结束了</li>
 <li>这些词汇对电脑来说没有意义，如果你愿意，你也可以写成<code>xxx(zxy, wf).</code>，只要你自己明白</li>
-<li>有些教程会说 Prolog 不支持中文，事实上是可以的，这条语句在 swi-prolog 中通过，在 GNU Prolog（在swi-prolog中也可以） 中需要在中文外面加单引号<code>’爱‘(’张学友‘, ’王菲‘).</code>，也必须是半角的。</li>
+<li>有些教程会说 Prolog 不支持中文，事实上是可以的，这条语句在 swi-prolog 中通过，在 GNU Prolog（在swi-prolog中也可以） 中需要在中文外面加单引号<code>’爱‘(’张学友‘, ’王菲‘).</code>，也必须是半角的。<strong>但是</strong>，gprolog 不支持输入中文，必须要使用重定向从文件中才能输入，比较麻烦。</li>
 </ol>
 
 <p>例子中的事实翻译成 Prolog 就是</p>
@@ -119,6 +141,29 @@ Prolog 是 Programming in Logic 的缩写，意思就是使用逻辑的语言编
 '爱'('谢廷峰', '周慧敏').
 '爱'('刘德华', '周慧敏').
 </code></pre>
+
+<p>那他们中，有哪些人是情侣呢？</p>
+
+<p>电脑不知道什么是情侣，所以要告诉它情侣的<strong><em>规则</em></strong></p>
+
+<pre><code>情侣 (甲, 乙) :- 爱 (甲, 乙), 爱 (乙, 甲).
+</code></pre>
+
+<p><code>:-</code>表示如果，这句话翻译成人类的语言就是<code>如果甲爱乙，而且乙爱甲。那么甲和乙就是情侣</code></p>
+
+<p>全部用英语表示（ gprolog 的中文支持的不太好）就是：</p>
+
+<pre><code>love(zhangxueyou, wanfei).
+love (zhangxueyou,zouhuimin).
+love (wanfei,xietinfeng).
+love (zouhuimin,zhangxueyou).
+love (xietinfeng,wanfei).
+love (xietinfeng,zouhuimin).
+love (liudehua,zouhuimin).
+lovers(X,Y):-love(X,Y),love(Y,X).
+</code></pre>
+
+<p>在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入<code>[user].</code>然后敲两下回车，输入这段文字之后，windows 输入 &lt;Ctrl-Z&gt; ，其他系统输入 &lt;Ctrl-D&gt; 反正就是输入EOF。</p>
 <!-- content end -->
 </div>
 <br>
