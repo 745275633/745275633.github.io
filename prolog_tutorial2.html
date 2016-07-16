@@ -80,17 +80,19 @@ Prolog 是 Programming in Logic 的缩写，意思就是使用逻辑的语言编
 全部用英语表示（ gprolog 的中文支持的不太好）就是：
 
 ~~~~
-love(zhangxueyou, wanfei).
-love (zhangxueyou,zouhuimin).
-love (wanfei,xietinfeng).
-love (zouhuimin,zhangxueyou).
-love (xietinfeng,wanfei).
-love (xietinfeng,zouhuimin).
-love (liudehua,zouhuimin).
+love (zhangxueyou, wanfei).
+love (zhangxueyou, zouhuimin).
+love (wanfei, xietinfeng).
+love (zouhuimin, zhangxueyou).
+love (xietinfeng, wanfei).
+love (xietinfeng, zouhuimin).
+love (liudehua, zouhuimin).
 lovers(X,Y):-love(X,Y),love(Y,X).
 ~~~~
 
 在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入`[user].`然后敲两下回车，输入这段文字之后，windows 输入 &lt;Ctrl-Z> ，其他系统输入 &lt;Ctrl-D> 反正就是输入EOF。
+
+现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -153,17 +155,19 @@ lovers(X,Y):-love(X,Y),love(Y,X).
 
 <p>全部用英语表示（ gprolog 的中文支持的不太好）就是：</p>
 
-<pre><code>love(zhangxueyou, wanfei).
-love (zhangxueyou,zouhuimin).
-love (wanfei,xietinfeng).
-love (zouhuimin,zhangxueyou).
-love (xietinfeng,wanfei).
-love (xietinfeng,zouhuimin).
-love (liudehua,zouhuimin).
+<pre><code>love (zhangxueyou, wanfei).
+love (zhangxueyou, zouhuimin).
+love (wanfei, xietinfeng).
+love (zouhuimin, zhangxueyou).
+love (xietinfeng, wanfei).
+love (xietinfeng, zouhuimin).
+love (liudehua, zouhuimin).
 lovers(X,Y):-love(X,Y),love(Y,X).
 </code></pre>
 
 <p>在解释器（gprolog 或 swipl ，就是在第一课测试的那个）中输入<code>[user].</code>然后敲两下回车，输入这段文字之后，windows 输入 &lt;Ctrl-Z&gt; ，其他系统输入 &lt;Ctrl-D&gt; 反正就是输入EOF。</p>
+
+<p>现在，解释器已经知道谁爱谁和情侣是什么了，现在可以问它</p>
 <!-- content end -->
 </div>
 <br>
