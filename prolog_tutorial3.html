@@ -99,7 +99,7 @@ swi 是
     -l file          Script source file
     -s file          Script source file
 
-或者直接加文件名，这几个我还没发现什么区别
+或者直接加文件名，这三个我还没发现什么区别
 
 ###编译器
 
@@ -110,11 +110,16 @@ GNU 使用
 input 换成输入文件名， output 换成输出文件名，如果不指定输出文件名，那么是 input 的基本名
 
 swi 使用
+
+    swipl -o output -c input
+
+如果不指定输出文件名，那么是 a.out
+
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<h1 id="prolog">Prolog 解释器和编译器的使用</h1>
+<span style="display: none; width: 0px; height: 0px;" id="transmark"></span><h1 id="prolog">Prolog 解释器和编译器的使用</h1>
 
 <h2 id="">解释器</h2>
 
@@ -207,6 +212,11 @@ For help, use ?- help(Topic). or ?- apropos(Word).
 <p>input 换成输入文件名， output 换成输出文件名，如果不指定输出文件名，那么是 input 的基本名</p>
 
 <p>swi 使用</p>
+
+<pre><code>swipl -o output -c input
+</code></pre>
+
+<p>如果不指定输出文件名，那么是 a.out</p>
 <!-- content end -->
 </div>
 <br>
