@@ -26,11 +26,187 @@
 <div id="md" style="display: none;">
 <!-- markdown -->
 #Prolog 解释器和编译器的使用
+##解释器
+###GNU
+输入
+
+    gprolog
+
+启动 GNU Prolog 解释器，会提示
+
+~~~~
+GNU Prolog 版本 (位数 bits)
+Compiled 编译时间 with 编译工具
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+~~~~
+
+提示符是 `| ?-`， 次行提示符（一行没输完的提示符，如bash是`>`）是` ` （不提示）
+
+每个（组）解后面有问号，`;`输出下一个（组）解，`a`输出全部解
+
+使用`yes`和`no`
+
+###swi
+
+输入
+
+    swipl
+
+启动 GNU Prolog 解释器，会提示
+
+~~~~
+Welcome to SWI-Prolog (线程, 位数 bits, Version 版本)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+~~~~
+
+提示符是 `?-` ，次行提示符是`| ` 
+
+`;`输出下一个（组）解，`w`显示完整的解（太长了会以省略号显示）
+
+使用`true`和`false`
+
+###载入文件
+
+在解释器中输入
+
+    consult(filename).
+
+filename替换成文件名，可以使用相对路径或绝对路径，有除了英文字母以外的字符要加单引号，没有扩展名的会自动加上`.pl`
+
+或者可以直接写成
+
+    [filename].
+
+和 consult 一样
+
+也可以使用命令行参数
+
+GNU 是
+
+    --consult-file FILE
+
+FILE 换成文件名，不过写`--c FILE`也可以，只要前几个字母一样就行了
+
+swi 是
+
+    -f file          User initialisation file
+    -l file          Script source file
+    -s file          Script source file
+
+或者直接加文件名，这几个我还没发现什么区别
+
+###编译器
+
+GNU 使用
+
+    gplc input -o output
+
+input 换成输入文件名， output 换成输出文件名，如果不指定输出文件名，那么是 input 的基本名
+
+swi 使用
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
 <h1 id="prolog">Prolog 解释器和编译器的使用</h1>
+
+<h2 id="">解释器</h2>
+
+<h3 id="gnu">GNU</h3>
+
+<p>输入</p>
+
+<pre><code>gprolog
+</code></pre>
+
+<p>启动 GNU Prolog 解释器，会提示</p>
+
+<pre><code>GNU Prolog 版本 (位数 bits)
+Compiled 编译时间 with 编译工具
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+</code></pre>
+
+<p>提示符是 <code>| ?-</code>， 次行提示符（一行没输完的提示符，如bash是<code>&gt;</code>）是<code></code> （不提示）</p>
+
+<p>每个（组）解后面有问号，<code>;</code>输出下一个（组）解，<code>a</code>输出全部解</p>
+
+<p>使用<code>yes</code>和<code>no</code></p>
+
+<h3 id="swi">swi</h3>
+
+<p>输入</p>
+
+<pre><code>swipl
+</code></pre>
+
+<p>启动 GNU Prolog 解释器，会提示</p>
+
+<pre><code>Welcome to SWI-Prolog (线程, 位数 bits, Version 版本)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+</code></pre>
+
+<p>提示符是 <code>?-</code> ，次行提示符是<code>|</code> </p>
+
+<p><code>;</code>输出下一个（组）解，<code>w</code>显示完整的解（太长了会以省略号显示）</p>
+
+<p>使用<code>true</code>和<code>false</code></p>
+
+<h3 id="">载入文件</h3>
+
+<p>在解释器中输入</p>
+
+<pre><code>consult(filename).
+</code></pre>
+
+<p>filename替换成文件名，可以使用相对路径或绝对路径，有除了英文字母以外的字符要加单引号，没有扩展名的会自动加上<code>.pl</code></p>
+
+<p>或者可以直接写成</p>
+
+<pre><code>[filename].
+</code></pre>
+
+<p>和 consult 一样</p>
+
+<p>也可以使用命令行参数</p>
+
+<p>GNU 是</p>
+
+<pre><code>--consult-file FILE
+</code></pre>
+
+<p>FILE 换成文件名，不过写<code>--c FILE</code>也可以，只要前几个字母一样就行了</p>
+
+<p>swi 是</p>
+
+<pre><code>-f file          User initialisation file
+-l file          Script source file
+-s file          Script source file
+</code></pre>
+
+<p>或者直接加文件名，这三个我还没发现什么区别</p>
+
+<h3 id="">编译器</h3>
+
+<p>GNU 使用</p>
+
+<pre><code>gplc input -o output
+</code></pre>
+
+<p>input 换成输入文件名， output 换成输出文件名，如果不指定输出文件名，那么是 input 的基本名</p>
+
+<p>swi 使用</p>
 <!-- content end -->
 </div>
 <br>
