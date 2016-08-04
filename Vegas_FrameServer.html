@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+之前为了让 Sony Vegas pro 13.0 用 DebugMode FrameServer 搭桥，研究了很久最后发现了一个很简单的办法
+
+1. 安装 [Vegas](http://vegasbar.lofter.com/post/1d4450de_74cd602)
+2. 安装 [DebugMode FrameServer 的 Vegas 13 版](http://pan.baidu.com/s/1pLRarub) 密码：6qf3
+ 1. 打开安装程序
+ 2. 点击 I Agree
+ 3. 确定 Sony?Vegas…… 勾着
+ 4. 点击 Next
+ 5. 选择 DebugMode FrameServer 的安装路径
+ 6. 点击 Next
+ 7. 确定 Vegas 13 的安装路径（默认是 C:\Program Files\Sony\Vegas Pro 13.0 ）
+ 8. 点击 Install
+ 9. 安装时会弹出来一个对话框问你是否要创建开始菜单项，没什么用，建议点否
+3. 打开 Vegas ，在要渲染的工程里点击渲染为
+4. 使用 DebugMode FrameServer (*.avi) 中的 Project Default
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<p>之前为了让 Sony Vegas pro 13.0 用 DebugMode FrameServer 搭桥，研究了很久最后发现了一个很简单的办法</p>
+
+<ol>
+<li>安装 <a href="http://vegasbar.lofter.com/post/1d4450de_74cd602">Vegas</a></li>
+<li>安装 <a href="http://pan.baidu.com/s/1pLRarub">DebugMode FrameServer 的 Vegas 13 版</a> 密码：6qf3
+<ol><li>打开安装程序</li>
+<li>点击 I Agree</li>
+<li>确定 Sony?Vegas…… 勾着</li>
+<li>点击 Next</li>
+<li>选择 DebugMode FrameServer 的安装路径</li>
+<li>点击 Next</li>
+<li>确定 Vegas 13 的安装路径（默认是 C:\Program Files\Sony\Vegas Pro 13.0 ）</li>
+<li>点击 Install</li>
+<li>安装时会弹出来一个对话框问你是否要创建开始菜单项，没什么用，建议点否</li></ol></li>
+<li>打开 Vegas ，在要渲染的工程里点击渲染为</li>
+<li>使用 DebugMode FrameServer (*.avi) 中的 Project Default</li>
+</ol>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "Vegas_FrameServer.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
