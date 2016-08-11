@@ -25,23 +25,24 @@
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
-**原文：https://wiki.factorio.com/index.php?title=Modding_Tutorial/zh**
+**原文：[https://wiki.factorio.com/index.php?title=Modding_Tutorial](htps://wiki.factorio.com/index.php?title=Modding_Tutorial)**
 
 #第1章 - 建立
 现在开始，首先你需要找到你的 Factorio 安装文件夹， [这页](https://wiki.factorio.com/index.php?title=Application_directory) 可以告诉你如何找到。在全新的 Factorio 中，如果没有 MOD 文件夹，你需要先启动一场游戏。
 
-开始制作mod时我们需要一个想法：我想制作一个能在游戏中使用轰炸机的MOD。为什么？因为只需简单地从虫巢上方飞过就能使用炸弹把他们炸个稀巴烂，这是多么惬意 :) 而且，没有类似的MOD。所以，和普通的Factorio mod比，它包含了更多的步骤和更复杂的技术才能制作。
+开始制作mod时我们需要一个想法：我想制作一个能在游戏中使用轰炸机的MOD。为什么？因为只需简单地从虫巢上方飞过就能使用炸弹把他们炸个稀巴烂，这是多么惬意 :) 而且，没有类似的MOD。所以，和普通的 Factorio mod 比，它包含了更多的步骤和复杂的技术才能制作。
 
-1) 在MODS的文件夹中创建一个名为“BomberTutorial”新文件夹。
+1) 在MODS的文件夹中创建一个名为 `BomberTutorial_0.1.1` 的新文件夹，后面的 `0.1.1` 需要和 `info.json` 中  `version` 的值一样。
 
-2) 在BomberTutorial文件夹，创建3个文件：
+2) 在 `BomberTutorial_0.1.1` 文件夹中，创建3个文件：
 
-- info.json （有关MOD，制造商和版本信息）
-- data.lua （这包含了其他.lua文件加载定义）
-- control.lua (actions we want the mod to perform)
+  * info.json （有关 mod、作者、版本 等信息）
+  2. data.lua （包含其他 `.lua 文件` 的加载定义）
+  3. control.lua （希望 mod 执行的操作)
 
-3)用文本编辑器，编辑info.json文件，以及类型（或复制/粘贴）：
+3) 用你喜欢的文本编辑器，编辑 info.json 文件，（或直接 复制/粘贴）：
 
+~~~~{lua}
 {
   "name": "BomberTutorial",
   "version": "0.1.1",
@@ -49,53 +50,73 @@
   "author": "FreeER",
   "contact": "http://www.factorioforums.com/forum/viewtopic.php?f=25&t=4570",
   "homepage": "http://www.factorioforums.com/wiki/index.php?title=Modding_Tutorial",
-  "description": "自制Mod，增加了一个轰炸机到Factorio"
+  "description": "Homemade Mod, added a bomber"
 }
+~~~~
+
+ * name （名字）
+ 2. version （版本）
+ 3. title （在游戏中 mod 界面的菜单中显示的标题）
+ 4. author （作者）
+ 5. contact （联系方式）
+ 6. homepage （主页）
+ 7. description （介绍）
 
 4) 在bombertutorial文件夹中创建一个名为“原型”文件夹。这个文件夹用来放置定义所有我们希望在我们的国防部使用的新物品的文件，配方和科技。在接下来的章节中，我们将创建一个文件在这个文件夹中。
 
 现在，我们（在技术上）已经有了一个MOD！虽然是个空架子，但是已经是一个mod。
 
-5) 保存所有文件，并运行Factorio。在主菜单中，点击MODS按钮，然后你将看到我们的MOD！但是由于MOD是个空架子，我们现在可以关闭Factorio了。 
+5.\) 保存所有文件，并运行Factorio。在主菜单中，点击MODS按钮，然后你将看到我们的MOD！但是由于MOD是个空架子，我们现在可以关闭Factorio了。 
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<p><strong>原文：https://wiki.factorio.com/index.php?title=Modding_Tutorial/zh</strong></p>
+<p><strong>原文：<a href="htps://wiki.factorio.com/index.php?title=Modding_Tutorial">https://wiki.factorio.com/index.php?title=Modding_Tutorial</a></strong></p>
 
 <h1 id="1">第1章 - 建立</h1>
 
 <p>现在开始，首先你需要找到你的 Factorio 安装文件夹， <a href="https://wiki.factorio.com/index.php?title=Application_directory">这页</a> 可以告诉你如何找到。在全新的 Factorio 中，如果没有 MOD 文件夹，你需要先启动一场游戏。</p>
 
-<p>开始制作mod时我们需要一个想法：我想制作一个能在游戏中使用轰炸机的MOD。为什么？因为只需简单地从虫巢上方飞过就能使用炸弹把他们炸个稀巴烂，这是多么惬意 :) 而且，没有类似的MOD。所以，和普通的Factorio mod比，它包含了更多的步骤和复杂的技术才能制作。</p>
+<p>开始制作mod时我们需要一个想法：我想制作一个能在游戏中使用轰炸机的MOD。为什么？因为只需简单地从虫巢上方飞过就能使用炸弹把他们炸个稀巴烂，这是多么惬意 :) 而且，没有类似的MOD。所以，和普通的 Factorio mod 比，它包含了更多的步骤和复杂的技术才能制作。</p>
 
-<p>1) 在MODS的文件夹中创建一个名为“BomberTutorial”新文件夹。</p>
+<p>1) 在MODS的文件夹中创建一个名为 <code>BomberTutorial_0.1.1</code> 的新文件夹，后面的 <code>0.1.1</code> 需要和 <code>info.json</code> 中  <code>version</code> 的值一样。</p>
 
-<p>2) 在BomberTutorial文件夹，创建3个文件：</p>
+<p>2) 在 <code>BomberTutorial_0.1.1</code> 文件夹中，创建3个文件：</p>
 
 <ul>
-<li>info.json （有关MOD，制造商和版本信息）</li>
-<li>data.lua （这包含了其他.lua文件加载定义）</li>
-<li>control.lua (actions we want the mod to perform)</li>
+<li>info.json （有关 mod、作者、版本 等信息）</li>
+<li>data.lua （包含其他 <code>.lua 文件</code> 的加载定义）</li>
+<li>control.lua （希望 mod 执行的操作)</li>
 </ul>
 
-<p>3)用文本编辑器，编辑info.json文件，以及类型（或复制/粘贴）：</p>
+<p>3) 用你喜欢的文本编辑器，编辑 info.json 文件，（或直接 复制/粘贴）：</p>
 
-<p>{
+<pre><code class="language-lua">{
   "name": "BomberTutorial",
   "version": "0.1.1",
   "title": "FreeER's Step by Step Bomber Mod",
   "author": "FreeER",
   "contact": "http://www.factorioforums.com/forum/viewtopic.php?f=25&amp;t=4570",
   "homepage": "http://www.factorioforums.com/wiki/index.php?title=Modding_Tutorial",
-  "description": "自制Mod，增加了一个轰炸机到Factorio"
-}</p>
+  "description": "Homemade Mod, added a bomber"
+}
+</code></pre>
+
+<ul>
+<li>name （名字）</li>
+<li>version （版本）</li>
+<li>title （在游戏中 mod 界面的菜单中显示的标题）</li>
+<li>author （作者）</li>
+<li>contact （联系方式）</li>
+<li>homepage （主页）</li>
+<li>description （介绍）</li>
+</ul>
 
 <p>4) 在bombertutorial文件夹中创建一个名为“原型”文件夹。这个文件夹用来放置定义所有我们希望在我们的国防部使用的新物品的文件，配方和科技。在接下来的章节中，我们将创建一个文件在这个文件夹中。</p>
 
 <p>现在，我们（在技术上）已经有了一个MOD！虽然是个空架子，但是已经是一个mod。</p>
 
-<p>5) 保存所有文件，并运行Factorio。在主菜单中，点击MODS按钮，然后你将看到我们的MOD！但是由于MOD是个空架子，我们现在可以关闭Factorio了。 </p>
+<p>5.) 保存所有文件，并运行Factorio。在主菜单中，点击MODS按钮，然后你将看到我们的MOD！但是由于MOD是个空架子，我们现在可以关闭Factorio了。 </p>
 <!-- content end -->
 </div>
 <br>
