@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+有人说“春秋无义战”。又有人则引用列宁的话为证：“历史常常有这样的战争，它们虽然像一切战争一样不可避免地带来种种惨祸、暴行、灾难和痛苦，但是它们仍然是进步的战争，它们促进了人类的发展，加速地破坏了极端有害和反动的制度”。
+
+1. 春秋争霸战争是各诸侯国为了夺取土地、人口及其他诸侯国的支配权而进行的战争，因此无正义与非正义之分，都会给人民带来灾难。同时诸侯争霸破坏分封制，导致礼崩乐坏，原有的等级 制度混乱，而且征战活动不利于社会稳定和经济发展。
+2. 但在客观上：
+ 1. 加快了统一的步伐，实现了区域性的局部统一，为全国统一奠定了基础；
+ 2. 在争霸斗争中，出现了民族大迁徙、大交流，华夏族与少数民族杂居共处，打破了各族间原来的地域界限，促进了民族融合。
+ 3. 加速了新旧制度的更替过程，各国为了战争的胜利，不得不在政治、经济和军事上进行某些改革，从而加速了新旧制度的更替，结果是加速了奴隶制的瓦解和封建制度的建立。
+ 4. 为了争霸的需要，一些诸侯国采取了一系列富国强兵的措施，延揽人才，实行改革，推动了社会的发展。
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<p>有人说“春秋无义战”。又有人则引用列宁的话为证：“历史常常有这样的战争，它们虽然像一切战争一样不可避免地带来种种惨祸、暴行、灾难和痛苦，但是它们仍然是进步的战争，它们促进了人类的发展，加速地破坏了极端有害和反动的制度”。</p>
+
+<ol>
+<li>春秋争霸战争是各诸侯国为了夺取土地、人口及其他诸侯国的支配权而进行的战争，因此无正义与非正义之分，都会给人民带来灾难。同时诸侯争霸破坏分封制，导致礼崩乐坏，原有的等级 制度混乱，而且征战活动不利于社会稳定和经济发展。</li>
+<li>但在客观上：
+<ol><li>加快了统一的步伐，实现了区域性的局部统一，为全国统一奠定了基础；</li>
+<li>在争霸斗争中，出现了民族大迁徙、大交流，华夏族与少数民族杂居共处，打破了各族间原来的地域界限，促进了民族融合。</li>
+<li>加速了新旧制度的更替过程，各国为了战争的胜利，不得不在政治、经济和军事上进行某些改革，从而加速了新旧制度的更替，结果是加速了奴隶制的瓦解和封建制度的建立。</li>
+<li>为了争霸的需要，一些诸侯国采取了一系列富国强兵的措施，延揽人才，实行改革，推动了社会的发展。</li></ol></li>
+</ol>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "sane.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
