@@ -69,6 +69,7 @@ int main()
 {
     auto a = new hello;
     a->hello_world();
+    delete a;
     return 0;
 }
 void main::test()
@@ -102,7 +103,7 @@ print "Hello world!\n"
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<h1 id="hello">hello</h1>
+<span style="display: none; width: 0px; height: 0px;" id="transmark"></span><h1 id="hello">hello</h1>
 
 <p>在c中，hello world应该这么写：</p>
 
@@ -144,6 +145,7 @@ print "Hello world!\n"
 <span class="token punctuation">{</span>
     <span class="token keyword">auto</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">hello</span><span class="token punctuation">;</span>
     a<span class="token operator">-</span>&gt;<span class="token function">hello_world<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">delete</span> a<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">void</span> main<span class="token operator">::</span><span class="token function">test<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
