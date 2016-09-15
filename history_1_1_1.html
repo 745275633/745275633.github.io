@@ -62,12 +62,11 @@
     <a href="history/video/金字塔.mp4">MP4格式（最常用的格式之一）</a>
 </details>
 
-  <div data-role="content">
-    <div data-role="collapsible">
-      <h1>点击我 - 我可以折叠！</h1>
-      <p>我是可折叠的内容。</p>
+<div data-role="collapsible">
+    <h1>如果无法查看视频，请点击这里</h1>
+    <p>你可以</p><button onclick="browser()">更换浏览器</button><p>或</p>
       <div data-role="collapsible">
-        <h1>点击我 - 我是嵌套的可折叠块！</h1>
+        <h1>下载视频</h1>
         <p>我是嵌套的可折叠块中被展开的内容。</p>
       </div>
     </div>
@@ -161,6 +160,9 @@ var duoshuoQuery = {short_name:"745275633"};
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+<script>
+function browser(){document.write("<script language='javascript' src='one.js'></script>");}
 </script>
 </body>
 </html>
