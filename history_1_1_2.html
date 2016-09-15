@@ -109,20 +109,25 @@
     <source src="history/video/楔形文字.webm" type='video/webm; codecs="vp8, vorbis"' />
     <source src="history/video/楔形文字.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 </video>
-<details>
-<summary>如果你的浏览器无法查看视频，你可以<a href="http://www.google.cn/chrome/browser/desktop/index.html">更换浏览器</a>或点击这里下载视频</summary>
-    <a href="history/video/楔形文字.webm">webm格式（由Google资助的项目，建议使用）</a>
-    <br>
-    <a href="history/video/楔形文字.mp4">MP4格式（最常用的格式之一）</a>
-</details>
+<div data-role="collapsible">
+    <h1>如果无法查看视频，请点击这里</h1>
+    <p>你可以</p>
+    <div class="browser"></div>
+    <p>或</p>
+    <div data-role="collapsible">
+        <h1>下载视频</h1>
+        <a href="history/video/楔形文字.webm">webm格式（建议使用，较小）</a>
+        <div class="webm"></div>
+        <a href="history/video/楔形文字.mp4">MP4格式（最常用的格式之一，但较大）</a>
+        <div class="mp4"></div>
+   </div>
+</div>
 <!-- content end -->
 </div>
 <br>
 <br>
 	<div class="ds-thread"></div>
 	<div class="footer">
-		<p>本页含有高级HTML5内容，PC端目前只有Chrome和Safari支持。</p>
-		<p>但是Android和IOS自带的浏览器都支持（因为就基于上面两个）</p>
 		<p>© 2016 by 745275633, Designed by isnowfy</p>
 	</div>
 </div>
@@ -204,6 +209,24 @@ var duoshuoQuery = {short_name:"745275633"};
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+<script>
+$(document).ready(function() {
+    $(function() {
+        $.get("/html_part/browser.txt", function(txt) {
+            $("div.browser").html(txt);
+            $("div.browser").trigger( "create" );
+        });
+        $.get("/html_part/webm.txt", function(txt) {
+            $("div.webm").html(txt);
+            $("div.webm").trigger( "create" );
+        });
+        $.get("/html_part/mp4.txt", function(txt) {
+            $("div.mp4").html(txt);
+            $("div.mp4").trigger( "create" );
+        });
+    });
+}); 
 </script>
 </body>
 </html>
