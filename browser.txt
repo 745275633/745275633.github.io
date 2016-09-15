@@ -1,6 +1,5 @@
 <div data-role="collapsible">
 	<h1>更换浏览器</h1>
-	<br>
 	<div data-role="collapsible-set">
 		<div data-role="collapsible">
 			<h1>Chrome（推荐）</h1>
