@@ -103,9 +103,6 @@ function get2()
 <script>
 $(document).bind("mobileinit", function(){
 	$.mobile.ajaxEnabled=false;
-        $.get("browser.txt", function(txt) {
-            document.getElementById("browser").innerHTML=txt;
-        });
 });
 </script>
 <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -180,6 +177,15 @@ var duoshuoQuery = {short_name:"745275633"};
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+<script>
+$(document).ready(function() {
+    $(function() {
+        $.get("browser,txt", function(txt) {
+            $("browser").html(txt);
+        });
+    });
+}); 
 </script>
 </body>
 </html>
