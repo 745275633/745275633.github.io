@@ -186,15 +186,15 @@ var duoshuoQuery = {short_name:"745275633"};
 <script>
 $(document).ready(function() {
     $(function() {
-        $.get("/html/part/browser.txt", function(txt) {
+        $.get("/html_part/browser.txt", function(txt) {
             $("div.browser").html(txt);
             $("div.browser").trigger( "create" );
         });
-        $.get("/html/part/webm.txt", function(txt) {
+        $.get("/html_part/webm.txt", function(txt) {
             $("div.webm").html(txt);
             $("div.webm").trigger( "create" );
         });
-        $.get("/html/part/mp4.txt", function(txt) {
+        $.get("/html_part/mp4.txt", function(txt) {
             $("div.mp4").html(txt);
             $("div.mp4").trigger( "create" );
         });
