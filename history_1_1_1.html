@@ -18,13 +18,13 @@
     <div class="header">
     	<ul id="pages">
             <li><a href="/">主页</a></li>
-            <li><a href="/#/tags">标签</a></li>
-            <li><a href="/#/archive">动态</a></li>
+            <li><a href="/#/tags" data-ajax="false">标签</a></li>
+            <li><a href="/#/archive" data-ajax="false">动态</a></li>
     	</ul>
     </div>
 	<div class="wrap-header">
 	<h1>
-    <a href="/" id="title"></a>
+    <a href="/" id="title" data-ajax="false"></a>
 	</h1>
 	</div>
 <div id="md" style="display: none;">
@@ -43,10 +43,10 @@
     <source src="history/video/埃及木乃伊是如何制作的.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 </video>
 <details>
-<summary>如果你的浏览器无法查看视频，你可以<a href="http://www.google.cn/chrome/browser/desktop/index.html">更换浏览器</a>或点击这里下载视频</summary>
-    <a href="history/video/埃及木乃伊是如何制作的.webm">webm格式（由Google资助的项目，建议使用）</a>
+<summary>如果你的浏览器无法查看视频，你可以<a href="http://www.google.cn/chrome/browser/desktop/index.html" data-ajax="false">更换浏览器</a>或点击这里下载视频</summary>
+    <a href="history/video/埃及木乃伊是如何制作的.webm" data-ajax="false">webm格式（由Google资助的项目，建议使用）</a>
     <br>
-    <a href="history/video/埃及木乃伊是如何制作的.mp4">MP4格式（最常用的格式之一）</a>
+    <a href="history/video/埃及木乃伊是如何制作的.mp4" data-ajax="false">MP4格式（最常用的格式之一）</a>
 </details>
 
 <p>金字塔：</p>
@@ -56,10 +56,10 @@
     <source src="history/video/金字塔.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 </video>
 <details>
-<summary>如果你的浏览器无法查看视频，你可以<a href="http://www.google.cn/chrome/browser/desktop/index.html">更换浏览器</a>或点击这里下载视频</summary>
-    <a href="history/video/金字塔.webm">webm格式（由Google资助的项目，建议使用）</a>
+<summary>如果你的浏览器无法查看视频，你可以<a href="http://www.google.cn/chrome/browser/desktop/index.html" data-ajax="false">更换浏览器</a>或点击这里下载视频</summary>
+    <a href="history/video/金字塔.webm" data-ajax="false">webm格式（由Google资助的项目，建议使用）</a>
     <br>
-    <a href="history/video/金字塔.mp4">MP4格式（最常用的格式之一）</a>
+    <a href="history/video/金字塔.mp4" data-ajax="false">MP4格式（最常用的格式之一）</a>
 </details>
 
   <div data-role="content">
@@ -84,20 +84,25 @@
 	</div>
 </div>
 <script src="main.js"></script>
+<script>
+$(document).bind("mobileinit", function(){
+	$.mobile.pushStateEnabled=false;
+});
+</script>
 <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script id="content" type="text/mustache">
     <h1>{{title}}</h1>
     <div class="tag">
     {{date}}
     {{#tags}}
-    <a href="/#/tag/{{name}}">#{{name}}</a>
+    <a href="/#/tag/{{name}}" data-ajax="false">#{{name}}</a>
     {{/tags}}
     </div>
 </script>
 <script id="pagesTemplate" type="text/mustache">
     {{#pages}}
     <li>
-        <a href="{{path}}">{{title}}</a>
+        <a href="{{path}}" data-ajax="false">{{title}}</a>
     </li>
     {{/pages}}
 </script>
