@@ -1,0 +1,5 @@
+<div data-role="collapsible">
+	<h1>webm 详细介绍</h1>
+	<p>WebM是一个由Google资助的项目，目标是构建一个开放的、免版权费用的视频文件格式。该视频文件格式应能提供高质量的视频压缩以配合HTML 5使用。</p>
+	<p>WebM项目是一个使用BSD许可证的开源项目。它采用了On2 Technologies开发的VP8及其后续版本VP9视频编解码器和Xiph.Org基金会开发的Vorbis音频编解码器，使用的封装格式则以Matroska格式为基础。</p>
+</div>
