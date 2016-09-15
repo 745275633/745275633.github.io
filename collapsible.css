@@ -1,0 +1,66 @@
+.ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner {
+	padding-left: 40px;
+}
+.ui-collapsible-heading .ui-btn-inner {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.ui-btn-icon-left .ui-btn-inner {
+	padding-left: 40px;
+}
+.ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+	font-size: 16px;
+	padding: .6em 20px;
+}
+.ui-btn-inner {
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+}
+.ui-btn-inner {
+	font-size: 16px;
+	padding: .6em 20px;
+	min-width: .75em;
+	display: block;
+	position: relative;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	zoom: 1;
+}
+.ui-btn-inner {
+	border-top: 1px solid #fff;
+	border-color: rgba(255,255,255,.3);
+}
+.ui-collapsible-heading .ui-btn {
+	text-align: left;
+}
+.ui-btn {
+	text-align: center;
+	cursor: pointer;
+}
+.ui-btn-active {
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+	text-shadow: 0 1px 0 #3373a5;
+	font-family: Helvetica,Arial,sans-serif;
+}
+.ui-btn-up-c, .ui-btn-hover-c, .ui-btn-down-c {
+	font-family: Helvetica,Arial,sans-serif;
+}
+.ui-btn-up-c {
+	font-weight: 700;
+	color: #222;
+	text-shadow: 0 1px 0 #fff;
+}
+.ui-collapsible-heading {
+	font-size: 16px;
+}
+.ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button {
+	font-family: Helvetica,Arial,sans-serif;
+}
+.ui-body-c, .ui-overlay-c {
+	color: #333;
+	text-shadow: 0 1px 0 #fff;
+}
+
