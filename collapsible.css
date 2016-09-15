@@ -36,18 +36,6 @@
 	 font-weight: 700
  }
  
- .ui-bar-a a.ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-bar-a a.ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-bar-a a.ui-link:active {
-	 color: #2489ce
- }
- 
  .ui-body-a,.ui-overlay-a {
 	 border: 1px solid #444;
 	 background: #222;
@@ -73,23 +61,6 @@
  
  .ui-body-a .ui-link-inherit {
 	 color: #fff
- }
- 
- .ui-body-a .ui-link {
-	 color: #2489ce;
-	 font-weight: 700
- }
- 
- .ui-body-a .ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-body-a .ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-body-a .ui-link:active {
-	 color: #2489ce
  }
  
  .ui-btn-up-a {
@@ -217,23 +188,6 @@
 	 color: #333
  }
  
- .ui-body-b .ui-link {
-	 color: #2489ce;
-	 font-weight: 700
- }
- 
- .ui-body-b .ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-body-b .ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-body-b .ui-link:active {
-	 color: #2489ce
- }
- 
  .ui-btn-up-b {
 	 border: 1px solid #044062;
 	 background: #396b9e;
@@ -316,18 +270,6 @@
 	 font-weight: 700
  }
  
- .ui-bar-c a.ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-bar-c a.ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-bar-c a.ui-link:active {
-	 color: #2489ce
- }
- 
  .ui-bar-c,.ui-bar-c input,.ui-bar-c select,.ui-bar-c textarea,.ui-bar-c button {
 	 font-family: Helvetica,Arial,sans-serif
  }
@@ -356,23 +298,6 @@
  
  .ui-body-c .ui-link-inherit {
 	 color: #333
- }
- 
- .ui-body-c .ui-link {
-	 color: #2489ce;
-	 font-weight: 700
- }
- 
- .ui-body-c .ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-body-c .ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-body-c .ui-link:active {
-	 color: #2489ce
  }
  
  .ui-btn-up-c {
@@ -456,23 +381,6 @@
 	 color: #333
  }
  
- .ui-bar-d a.ui-link {
-	 color: #2489ce;
-	 font-weight: 700
- }
- 
- .ui-bar-d a.ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-bar-d a.ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-bar-d a.ui-link:active {
-	 color: #2489ce
- }
- 
  .ui-body-d,.ui-overlay-d {
 	 border: 1px solid #bbb;
 	 color: #333;
@@ -497,23 +405,6 @@
  
  .ui-body-d .ui-link-inherit {
 	 color: #333
- }
- 
- .ui-body-d .ui-link {
-	 color: #2489ce;
-	 font-weight: 700
- }
- 
- .ui-body-d .ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-body-d .ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-body-d .ui-link:active {
-	 color: #2489ce
  }
  
  .ui-btn-up-d {
@@ -598,23 +489,6 @@
 	 color: #333
  }
  
- .ui-bar-e a.ui-link {
-	 color: #2489ce;
-	 font-weight: 700
- }
- 
- .ui-bar-e a.ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-bar-e a.ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-bar-e a.ui-link:active {
-	 color: #2489ce
- }
- 
  .ui-body-e,.ui-overlay-e {
 	 border: 1px solid #f7c942;
 	 color: #222;
@@ -639,23 +513,6 @@
  
  .ui-body-e .ui-link-inherit {
 	 color: #222
- }
- 
- .ui-body-e .ui-link {
-	 color: #2489ce;
-	 font-weight: 700
- }
- 
- .ui-body-e .ui-link:visited {
-	 color: #2489ce
- }
- 
- .ui-body-e .ui-link:hover {
-	 color: #2489ce
- }
- 
- .ui-body-e .ui-link:active {
-	 color: #2489ce
  }
  
  .ui-btn-up-e {
