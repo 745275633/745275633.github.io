@@ -183,9 +183,9 @@ $(document).ready(function() {
     $(function() {
         $.get("browser.txt", function(txt) {
             $("div.browser").html(txt);
+            $("div.browser").trigger( "create" );
         });
     });
-    $('#myul').listview('refresh');  
 }); 
 </script>
 </body>
