@@ -1,0 +1,42 @@
+    <div data-role="collapsible">
+        <h1>更换浏览器</h1>
+        <div data-role="collapsible">
+            <h1>Chrome（推荐）</h1>
+            <a href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html">
+            <p>Google Chrome是由Google开发的免费网页浏览器</p>
+            <p>Google Chrome的整体发展目标是提升稳定性、速度和安全性，并创造出简单且有效率的用户界面。</p>
+            </a>
+		</div>
+        <div data-role="collapsible">
+            <h1>Firefox</h1>
+            <a href="http://www.firefox.com.cn">
+            <p>Mozilla Firefox，中文俗称火狐，是一个自由及开源的网页浏览器，由Mozilla基金会及其子公司Mozilla公司开发。</p>
+            <p>Firefox支持Windows、OS X及Linux，其移动版支持Android及Firefox OS。</p>
+            <p>Firefox于2002年由Mozilla社区成员创建，当时叫做“Phoenix”，因为社区成员们想要一个独立的浏览器，而非Mozilla Application Suite这样的包。</p>
+            <p>即使在测试阶段，Firefox也在测试者中颇为流行，并因其速度、安全性及扩充组件而受称赞。</p>
+            <p>Firefox于2004年11月首次发布，并且9个月内下载量超过6000万，获取了巨大的成功，Internet Explorer的主导地位首次受到了挑战。</p>
+            <p>截至2016年1月，Firefox全球市占率为9％至16%，为全球第二流行的网页浏览器。据Mozilla统计，截至2014年12月，Firefox在全世界拥有5亿用户。</p>
+            </a>
+		</div>
+        <div data-role="collapsible">
+            <h1>Chrome（推荐）</h1>
+            <a href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html">
+            <p>Safari是苹果公司所开发，并自带于OS X的网页浏览器。</p>
+            <p>Safari在2003年1月7日首度发行测试版，并从Mac OS X Panther开始成为OS X的默认浏览器，也是iOS自带的默认浏览器。</p>
+            </a>
+		</div>
+        <div data-role="collapsible">
+            <h1>Chrome（推荐）</h1>
+            <a href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html">
+            <p>Google Chrome是由Google开发的免费网页浏览器</p>
+            <p>Google Chrome的整体发展目标是提升稳定性、速度和安全性，并创造出简单且有效率的用户界面。</p>
+            </a>
+		</div>
+        <div data-role="collapsible">
+            <h1>Chrome（推荐）</h1>
+            <a href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html">
+            <p>Google Chrome是由Google开发的免费网页浏览器</p>
+            <p>Google Chrome的整体发展目标是提升稳定性、速度和安全性，并创造出简单且有效率的用户界面。</p>
+            </a>
+		</div>
+   </div>
