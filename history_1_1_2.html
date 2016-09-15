@@ -17,14 +17,14 @@
 <div class="main">
     <div class="header">
     	<ul id="pages">
-            <li><a href="/" data-ajax="false">主页</a></li>
-            <li><a href="/#/tags" data-ajax="false">标签</a></li>
-            <li><a href="/#/archive" data-ajax="false">动态</a></li>
+            <li><a href="/">主页</a></li>
+            <li><a href="/#/tags">标签</a></li>
+            <li><a href="/#/archive">动态</a></li>
     	</ul>
     </div>
 	<div class="wrap-header">
 	<h1>
-    <a href="/" id="title" data-ajax="false"></a>
+    <a href="/" id="title"></a>
 	</h1>
 	</div>
 <div id="md" style="display: none;">
@@ -34,9 +34,9 @@
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<a href="http://ow365.cn/?i=10675&furl=http://www.datsd.ga/history/ppt/%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%AC%AC1%E8%AF%BE%E7%AC%AC2%E8%AF%BE%E6%97%B6%EF%BC%9A%E4%BA%9A%E9%9D%9E%E5%A4%A7%E6%B2%B3%E6%96%87%E6%98%8E%E4%B9%8B%E5%8F%A4%E4%BB%A3%E8%A5%BF%E4%BA%9A%E5%9B%BD%E5%AE%B6.ppt" data-ajax="false">课件在线预览</a> 
+<a href="http://ow365.cn/?i=10675&furl=http://www.datsd.ga/history/ppt/%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%AC%AC1%E8%AF%BE%E7%AC%AC2%E8%AF%BE%E6%97%B6%EF%BC%9A%E4%BA%9A%E9%9D%9E%E5%A4%A7%E6%B2%B3%E6%96%87%E6%98%8E%E4%B9%8B%E5%8F%A4%E4%BB%A3%E8%A5%BF%E4%BA%9A%E5%9B%BD%E5%AE%B6.ppt">课件在线预览</a> 
 <br>
-<a href="history/ppt/第一章第1课第2课时：亚非大河文明之古代西亚国家.ppt" data-ajax="false">课件下载</a>
+<a href="history/ppt/第一章第1课第2课时：亚非大河文明之古代西亚国家.ppt">课件下载</a>
 <h2 id="">古巴比伦王国与《汉谟拉比法典》</h2>
 <p>兴起：公元前3500年，两河流域出现很多小国</p>
 <p>统一：公元前18世纪，汉谟拉比统一两河流域</p>
@@ -110,10 +110,10 @@
     <source src="history/video/楔形文字.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 </video>
 <details>
-<summary>如果你的浏览器无法查看视频，你可以<a href="http://www.google.cn/chrome/browser/desktop/index.html" data-ajax="false">更换浏览器</a>或点击这里下载视频</summary>
-    <a href="history/video/楔形文字.webm" data-ajax="false">webm格式（由Google资助的项目，建议使用）</a>
+<summary>如果你的浏览器无法查看视频，你可以<a href="http://www.google.cn/chrome/browser/desktop/index.html">更换浏览器</a>或点击这里下载视频</summary>
+    <a href="history/video/楔形文字.webm">webm格式（由Google资助的项目，建议使用）</a>
     <br>
-    <a href="history/video/楔形文字.mp4" data-ajax="false">MP4格式（最常用的格式之一）</a>
+    <a href="history/video/楔形文字.mp4">MP4格式（最常用的格式之一）</a>
 </details>
 <!-- content end -->
 </div>
@@ -127,20 +127,25 @@
 	</div>
 </div>
 <script src="main.js"></script>
+<script>
+$(document).bind("mobileinit", function(){
+	$.mobile.ajaxEnabled=false;
+});
+</script>
 <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script id="content" type="text/mustache">
     <h1>{{title}}</h1>
     <div class="tag">
     {{date}}
     {{#tags}}
-    <a href="/#/tag/{{name}}" data-ajax="false">#{{name}}</a>
+    <a href="/#/tag/{{name}}">#{{name}}</a>
     {{/tags}}
     </div>
 </script>
 <script id="pagesTemplate" type="text/mustache">
     {{#pages}}
     <li>
-        <a href="{{path}}" data-ajax="false">{{title}}</a>
+        <a href="{{path}}">{{title}}</a>
     </li>
     {{/pages}}
 </script>
