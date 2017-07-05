@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
+	<title>{{ page.title }} by {{ site.github.owner_name }}</title>
     <!--[if lt IE 11]>
     <link rel="stylesheet" href="/ie-blocker/ie-blocker.css">
     <script src="/ie-blocker/ie-blocker.zhCN.js"></script>
@@ -35,20 +35,20 @@
       </section>
     </div>
 
-    <div id="container"></div>
-    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-    <script>
-    var gitment = new Gitment({
-        owner: '745275633',
-        repo: '745275633.github.io',
-        oauth: {
-            client_id: 'cc78bf6b5758fd53a38a',
-            client_secret: '96acad33ae8646e60b8f0bfd7d1c99e24f7a7caf',
-        },
-    })
-    gitment.render('container')
-    </script>
+	<div id="container"></div>
+    <link rel="stylesheet" href="/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+	var gitment = new Gitment({
+		owner: '{{ site.github.owner_name }}',
+		repo: '{{ site.github.repository_name }}',
+		oauth: {
+			client_id: 'cc78bf6b5758fd53a38a',
+			client_secret: '96acad33ae8646e60b8f0bfd7d1c99e24f7a7caf',
+		},
+	})
+	gitment.render('container')
+	</script>
 
     {% if site.google_analytics %}
       <script type="text/javascript">
