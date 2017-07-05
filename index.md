@@ -1,4 +1,4 @@
 ---
 title: 745275633
 ---
-{{ site.pages }}
+{{ site.posts }}
